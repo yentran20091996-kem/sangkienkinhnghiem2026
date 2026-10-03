@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply antialiased bg-slate-100 text-slate-800;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print styling */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  aside, header, button, .no-print {
+    display: none !important;
+  }
+  @page {
+    size: A4;
+    margin: 20mm 20mm 20mm 30mm;
+  }
+}
